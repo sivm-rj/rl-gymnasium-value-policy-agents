@@ -41,19 +41,19 @@ The RL process follows a continuous loop:
 5. The agent updates its policy based on the experience
 6. The process repeats until the episode ends or a goal is achieved
 
-This trial-and-error learning approach allows agents to discover optimal strategies without explicit programming, making RL particularly powerful for complex decision-making tasks[7][10].
+This trial-and-error learning approach allows agents to discover optimal strategies without explicit programming, making RL particularly powerful for complex decision-making tasks.
 
 ## Gymnasium Environment
 
-Gymnasium is an open-source Python library that provides a standard API for reinforcement learning environments[21][27]. It is a maintained fork of OpenAI's Gym library, developed by the Farama Foundation to ensure continued development and maintenance[22][25].
+Gymnasium is an open-source Python library that provides a standard API for reinforcement learning environments. It is a maintained fork of OpenAI's Gym library, developed by the Farama Foundation to ensure continued development and maintenance.
 
 ### What is Gymnasium?
 
 Gymnasium offers a unified interface for RL experiments, making it easier for researchers and developers to:
 
-- **Standardize Environment Interactions**: Provides consistent methods for initializing environments, taking actions, and receiving observations[29][32]
-- **Focus on Algorithm Development**: Abstracts away the complexity of environment implementation, allowing researchers to concentrate on developing RL algorithms[26][38]
-- **Ensure Reproducibility**: Includes environment versioning and seeding capabilities to ensure consistent and reproducible results[32]
+- **Standardize Environment Interactions**: Provides consistent methods for initializing environments, taking actions, and receiving observations
+- **Focus on Algorithm Development**: Abstracts away the complexity of environment implementation, allowing researchers to concentrate on developing RL algorithms
+- **Ensure Reproducibility**: Includes environment versioning and seeding capabilities to ensure consistent and reproducible results
 
 ### Key Features
 
@@ -74,39 +74,39 @@ for _ in range(1000):
 env.close()
 ```
 
-**Diverse Environment Collection**: Gymnasium includes several families of environments[27][33]:
+**Diverse Environment Collection**: Gymnasium includes several families of environments:
 - **Classic Control**: Physics-based control tasks (CartPole, Pendulum, etc.)
 - **Box2D**: 2D physics-based games and simulations
 - **Toy Text**: Simple discrete environments for debugging algorithms
 - **MuJoCo**: Complex physics simulations with multi-joint control
 - **Atari**: Classic Atari 2600 games for testing RL algorithms
 
-**Action and Observation Spaces**: Environments define structured spaces that specify the format and bounds of actions and observations[24].
+**Action and Observation Spaces**: Environments define structured spaces that specify the format and bounds of actions and observations.
 
 ### Why Use Gymnasium?
 
-1. **Industry Standard**: Gymnasium's API has become the de facto standard for RL research and development[31][34]
-2. **Easy Integration**: Compatible with popular RL libraries like Stable-Baselines3, RLlib, and others[35]
+1. **Industry Standard**: Gymnasium's API has become the de facto standard for RL research and development
+2. **Easy Integration**: Compatible with popular RL libraries like Stable-Baselines3, RLlib, and others
 3. **Extensive Documentation**: Comprehensive guides and examples for getting started
 4. **Active Community**: Regular updates, bug fixes, and new environment additions
 
 ## Value-Based Methods
 
-Value-based methods in reinforcement learning focus on learning the value of states or actions to guide decision-making[41][44]. Instead of directly learning a policy, these methods estimate how beneficial it is to be in specific states or take specific actions, measured by expected cumulative future rewards[50][53].
+Value-based methods in reinforcement learning focus on learning the value of states or actions to guide decision-making. Instead of directly learning a policy, these methods estimate how beneficial it is to be in specific states or take specific actions, measured by expected cumulative future rewards.
 
 ### Core Concept
 
 The fundamental idea is to build value functions that estimate expected returns:
 
 - **State-Value Function V(s)**: Expected reward for being in state s and following the current policy
-- **Action-Value Function Q(s,a)**: Expected reward for taking action a in state s and then following the policy[41][50]
+- **Action-Value Function Q(s,a)**: Expected reward for taking action a in state s and then following the policy
 
-Once learned, these value functions guide action selection by choosing actions with the highest estimated values[44][47].
+Once learned, these value functions guide action selection by choosing actions with the highest estimated values.
 
 ### Key Algorithms
 
 #### Q-Learning
-Q-Learning is a model-free, off-policy algorithm that learns optimal action-values using the Bellman equation[44]:
+Q-Learning is a model-free, off-policy algorithm that learns optimal action-values using the Bellman equation:
 
 ```
 Q(s,a) ← Q(s,a) + α[r + γ max Q(s',a') - Q(s,a)]
@@ -119,41 +119,41 @@ Where:
 - s' is the next state
 
 #### Deep Q-Networks (DQN)
-For complex environments with large state spaces, DQN uses neural networks to approximate Q-values instead of maintaining Q-tables[45][51]:
+For complex environments with large state spaces, DQN uses neural networks to approximate Q-values instead of maintaining Q-tables:
 
-- **Experience Replay**: Stores past experiences to break temporal correlations and improve stability[54]
-- **Target Network**: Uses a separate network for computing target values to stabilize training[54]
-- **ε-greedy Exploration**: Balances exploration and exploitation during learning[57]
+- **Experience Replay**: Stores past experiences to break temporal correlations and improve stability
+- **Target Network**: Uses a separate network for computing target values to stabilize training
+- **ε-greedy Exploration**: Balances exploration and exploitation during learning
 
 #### Temporal Difference Learning
-TD learning updates value estimates based on the difference between predicted and observed values[43][46]:
+TD learning updates value estimates based on the difference between predicted and observed values:
 
 - Updates predictions to match future predictions at each time step
 - Combines aspects of Monte Carlo and Dynamic Programming methods
-- Enables learning without waiting for episode completion[52][55]
+- Enables learning without waiting for episode completion
 
 ### Advantages
 
-1. **Discrete Action Efficiency**: Excellent performance in environments with discrete, manageable action spaces[41][53]
-2. **Sample Efficiency**: Generally requires fewer interactions with the environment compared to policy methods[81]
-3. **Proven Convergence**: Theoretical guarantees for convergence in tabular settings[44]
-4. **Computational Efficiency**: Direct value estimation can be computationally efficient for appropriate problems[81]
+1. **Discrete Action Efficiency**: Excellent performance in environments with discrete, manageable action spaces
+2. **Sample Efficiency**: Generally requires fewer interactions with the environment compared to policy methods
+3. **Proven Convergence**: Theoretical guarantees for convergence in tabular settings
+4. **Computational Efficiency**: Direct value estimation can be computationally efficient for appropriate problems
 
 ### Disadvantages
 
-1. **Continuous Action Limitations**: Struggle with continuous or high-dimensional action spaces where maximizing over all actions becomes impractical[41][67]
-2. **Function Approximation Issues**: Can suffer from instability and convergence problems when using neural networks[82][85]
-3. **Exploration Challenges**: Require explicit exploration strategies (like ε-greedy) that may not be optimal[87]
-4. **Deterministic Policies**: Typically learn quasi-deterministic policies, which can be suboptimal in partially observable environments[87][93]
-5. **Overestimation Bias**: DQN can overestimate action values, leading to suboptimal policies[42][60]
+1. **Continuous Action Limitations**: Struggle with continuous or high-dimensional action spaces where maximizing over all actions becomes impractical
+2. **Function Approximation Issues**: Can suffer from instability and convergence problems when using neural networks
+3. **Exploration Challenges**: Require explicit exploration strategies (like ε-greedy) that may not be optimal
+4. **Deterministic Policies**: Typically learn quasi-deterministic policies, which can be suboptimal in partially observable environments
+5. **Overestimation Bias**: DQN can overestimate action values, leading to suboptimal policies
 
 ## Policy-Based Methods
 
-Policy-based methods directly learn a policy—a strategy for choosing actions—without relying on intermediate value function estimates[61][67]. These methods parameterize the policy (often using neural networks) and optimize it to maximize expected cumulative rewards[64][73].
+Policy-based methods directly learn a policy—a strategy for choosing actions—without relying on intermediate value function estimates. These methods parameterize the policy (often using neural networks) and optimize it to maximize expected cumulative rewards.
 
 ### Core Concept
 
-Rather than learning "how good" states or actions are, policy methods directly learn "what to do" by optimizing a parameterized policy π_θ(a|s) that outputs action probabilities[64][76]. The goal is to find parameters θ that maximize the expected return:
+Rather than learning "how good" states or actions are, policy methods directly learn "what to do" by optimizing a parameterized policy π_θ(a|s) that outputs action probabilities. The goal is to find parameters θ that maximize the expected return:
 
 ```
 J(θ) = E[Σ γ^t R_t]
@@ -162,29 +162,29 @@ J(θ) = E[Σ γ^t R_t]
 ### Key Algorithms
 
 #### REINFORCE Algorithm
-REINFORCE is a Monte Carlo policy gradient method that updates policy parameters using complete episode returns[68][77]:
+REINFORCE is a Monte Carlo policy gradient method that updates policy parameters using complete episode returns:
 
 1. **Collect Episode**: Run policy to generate trajectory of states, actions, and rewards
 2. **Calculate Returns**: Compute cumulative discounted rewards G_t for each time step
 3. **Update Policy**: Adjust parameters using: θ ← θ + α ∇log π_θ(a_t|s_t) G_t
-4. **Repeat**: Continue for multiple episodes until convergence[71][80]
+4. **Repeat**: Continue for multiple episodes until convergence
 
 #### Actor-Critic Methods
-Actor-Critic algorithms combine policy-based and value-based approaches[63][66]:
+Actor-Critic algorithms combine policy-based and value-based approaches:
 
 - **Actor**: The policy network that selects actions based on current state
 - **Critic**: Value function that evaluates the actor's actions
-- **Advantage**: Uses the difference between actual and expected returns to reduce variance[65][69]
+- **Advantage**: Uses the difference between actual and expected returns to reduce variance
 
 Popular variants include:
 - **A2C/A3C**: Advantage Actor-Critic with synchronous/asynchronous updates
 - **PPO**: Proximal Policy Optimization with clipped objectives for stability
-- **DDPG**: Deep Deterministic Policy Gradient for continuous control[66][69]
+- **DDPG**: Deep Deterministic Policy Gradient for continuous control
 
 ### Advantages
 
-1. **Continuous Action Spaces**: Naturally handle continuous and high-dimensional action spaces by directly outputting actions[67][73]
-2. **Stochastic Policies**: Can learn probabilistic policies, enabling better exploration and handling of partially observable environments[64][87]
+1. **Continuous Action Spaces**: Naturally handle continuous and high-dimensional action spaces by directly outputting actions
+2. **Stochastic Policies**: Can learn probabilistic policies, enabling better exploration and handling of partially observable environments
 3. **No Perceptual Aliasing**: Stochastic policies avoid getting stuck in situations where different states appear identical[87][98]
 4. **Better Convergence Properties**: Often have superior convergence characteristics compared to value-based methods[87]
 5. **Direct Optimization**: Optimize the quantity we care about (policy performance) directly[70][76]
