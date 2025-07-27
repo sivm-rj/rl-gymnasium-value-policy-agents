@@ -185,18 +185,18 @@ Popular variants include:
 
 1. **Continuous Action Spaces**: Naturally handle continuous and high-dimensional action spaces by directly outputting actions
 2. **Stochastic Policies**: Can learn probabilistic policies, enabling better exploration and handling of partially observable environments
-3. **No Perceptual Aliasing**: Stochastic policies avoid getting stuck in situations where different states appear identical[87][98]
-4. **Better Convergence Properties**: Often have superior convergence characteristics compared to value-based methods[87]
-5. **Direct Optimization**: Optimize the quantity we care about (policy performance) directly[70][76]
+3. **No Perceptual Aliasing**: Stochastic policies avoid getting stuck in situations where different states appear identical
+4. **Better Convergence Properties**: Often have superior convergence characteristics compared to value-based methods
+5. **Direct Optimization**: Optimize the quantity we care about (policy performance) directly
 
 ### Disadvantages
 
-1. **High Variance**: Policy gradient estimates can have high variance, leading to unstable training[67][83]
-2. **Sample Inefficiency**: Often require many episodes to learn effective policies[83][97]
-3. **Local Optima**: Can get trapped in local optima during gradient ascent[70][90]
-4. **Slow Convergence**: May converge slowly compared to value-based methods in some environments[83][97]
-5. **Hyperparameter Sensitivity**: Performance can be highly sensitive to learning rates and other hyperparameters[92][95]
-6. **Exploration-Exploitation Balance**: Balancing exploration of new strategies with exploitation of known successful approaches[83][97]
+1. **High Variance**: Policy gradient estimates can have high variance, leading to unstable training
+2. **Sample Inefficiency**: Often require many episodes to learn effective policies
+3. **Local Optima**: Can get trapped in local optima during gradient ascent
+4. **Slow Convergence**: May converge slowly compared to value-based methods in some environments
+5. **Hyperparameter Sensitivity**: Performance can be highly sensitive to learning rates and other hyperparameters
+6. **Exploration-Exploitation Balance**: Balancing exploration of new strategies with exploitation of known successful approaches
 
 ## Method Comparison Summary
 
