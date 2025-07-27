@@ -14,25 +14,25 @@ This repository contains implementations of reinforcement learning agents traine
 
 ## What is Reinforcement Learning?
 
-Reinforcement Learning (RL) is a type of machine learning that focuses on training agents to make decisions by interacting with an environment[1][2]. Unlike supervised learning, which relies on labeled input-output pairs, RL agents learn through trial and error by receiving rewards or penalties based on their actions[4][13].
+Reinforcement Learning (RL) is a type of machine learning that focuses on training agents to make decisions by interacting with an environment. Unlike supervised learning, which relies on labeled input-output pairs, RL agents learn through trial and error by receiving rewards or penalties based on their actions.
 
 ### Key Components
 
-**Agent**: The decision-maker that interacts with the environment and learns to optimize its behavior[1][5].
+**Agent**: The decision-maker that interacts with the environment and learns to optimize its behavior.
 
-**Environment**: The external world or system with which the agent interacts, including all conditions, contexts, and dynamics that the agent must respond to[12][18].
+**Environment**: The external world or system with which the agent interacts, including all conditions, contexts, and dynamics that the agent must respond to.
 
-**State**: The current situation or condition of the environment at a specific time, representing all information needed for decision-making[2][15].
+**State**: The current situation or condition of the environment at a specific time, representing all information needed for decision-making.
 
-**Action**: The choices or decisions that the agent can make in response to the current state[5][15].
+**Action**: The choices or decisions that the agent can make in response to the current state.
 
-**Reward**: The feedback signal from the environment that indicates how good or bad an action was, guiding the agent toward its goal[4][15].
+**Reward**: The feedback signal from the environment that indicates how good or bad an action was, guiding the agent toward its goal.
 
-**Policy**: A strategy or rule set that maps states to actions, determining what action the agent should take in each state[1][6].
+**Policy**: A strategy or rule set that maps states to actions, determining what action the agent should take in each state.
 
 ### How RL Works
 
-The RL process follows a continuous loop[13][18]:
+The RL process follows a continuous loop:
 
 1. The agent observes the current state of the environment
 2. Based on its policy, the agent selects an action
