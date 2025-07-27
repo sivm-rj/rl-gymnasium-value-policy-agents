@@ -244,8 +244,8 @@ reinforcement-learning-agents/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/reinforcement-learning-agents.git
-cd reinforcement-learning-agents
+git clone https://github.com/sivm-rj/rl-gymnasium-value-policy-agents.git
+cd rl-gymnasium-value-policy-agents
 ```
 
 2. Install dependencies:
