@@ -8,9 +8,9 @@ This repository contains implementations of reinforcement learning agents traine
 - [Gymnasium Environment](#gymnasium-environment)
 - [Value-Based Methods](#value-based-methods)
 - [Policy-Based Methods](#policy-based-methods)
-- [Project Structure](#project-structure)
+<!--- [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
-- [Contributing](#contributing)
+- [Contributing](#contributing) -->
 
 ## What is Reinforcement Learning?
 
@@ -211,7 +211,7 @@ Popular variants include:
 | **Computational Cost** | Lower for discrete actions | Higher due to gradient computation |
 | **Stability** | Can suffer from function approximation issues | High variance in updates |
 
-## Project Structure
+<!--## Project Structure
 
 ```
 reinforcement-learning-agents/
@@ -233,7 +233,7 @@ reinforcement-learning-agents/
 └── docs/                 # Additional documentation
 ```
 
-<!-- ## Getting Started
+## Getting Started
 
 ### Prerequisites
 
